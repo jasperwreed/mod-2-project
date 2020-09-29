@@ -1,0 +1,15 @@
+<%= form_for @product do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :price %>
+    <%= f.number_field :price %><br>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %><br>
+
+    <%= f.collection_select :owner_id, User.all, :id, :name %><br>
+    <%= f.collection_check_boxes :category_ids, @category, :id, :name %><br>
+
+    <%= f.submit %>
+<% end %>

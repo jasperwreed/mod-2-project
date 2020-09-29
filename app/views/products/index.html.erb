@@ -5,5 +5,8 @@
         <%= product.name %>
         <%= product.price %>
         <%= product.description %>
+        <% product.product_categories.each do |product_category| %>
+            <%= product_category.category.name %>
+        <% end %>
     </div>
 <% end %>

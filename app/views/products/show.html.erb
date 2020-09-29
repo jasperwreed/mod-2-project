@@ -1,8 +1,16 @@
 <h3>Product Name:</h3>
 <%= @product.name %>
 
+<h3>Product Owner:</h3>
+<%= @product.owner.name %>
+
 <h6>Price:</h6>
 <%= @product.price %>
+
+<h6>Category:</h6>
+<% @product.product_categories.each do |pc| %>
+    <%= pc.category.name %>
+<% end %>
 
 <p>Description:
 <%= @product.description %></p>
