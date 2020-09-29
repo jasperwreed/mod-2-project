@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-    has_many :product_owners, class_name: "Product", foreign_key: "user_id"
+    has_many :owned_products, class_name: "Product", foreign_key: "owner_id"
 end

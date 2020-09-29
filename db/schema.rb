@@ -31,10 +31,9 @@ ActiveRecord::Schema.define(version: 2020_09_28_233115) do
     t.string "name"
     t.integer "price"
     t.text "description"
-    t.integer "user_id"
+    t.integer "owner_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|

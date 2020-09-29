@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.string :name
       t.integer :price
       t.text :description
-      t.belongs_to :user
+      t.integer :owner_id
 
       t.timestamps
     end
