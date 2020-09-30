@@ -1,3 +1,59 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+main{
+    max-width: 720px;
+    margin: 5% auto;
+  }
+
+.card{
+    box-shadow: 0 6px 6px rgba(#000, 0.3);
+    transition: 200ms;
+    background: #fff;
+    
+    .card__body{
+      padding: 0 40px;
+      display: flex;
+      flex-flow: row no-wrap;
+      margin-bottom: 25px;
+      
+      > .half{
+        box-sizing: border-box;
+        padding: 0 15px;
+        flex: 1 0 50%;
+      }
+      
+      .text{
+        p{
+          margin: 0;
+          padding: 0;
+          
+          &.name{
+            font-size: 26px;
+            text-transform: uppercase;
+            color: #686e77;
+            font-weight: 300;
+            margin-bottom: 5px;
+          }
+          
+          &.price{
+            color: #252525;
+            font-size: 26px;
+          }
+        }
+      }
+
+      .description{
+        margin-bottom: 25px;
+        
+        p{
+          margin: 0;
+          font-family: "Open Sans", sans-serif;
+          font-weight: 300;
+          line-height: 27px;
+          font-size: 16px;
+          color: #555;
+        }
+      }
+    }
+}

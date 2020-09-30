@@ -13,11 +13,11 @@
     <%= pc.category.name %>
 <% end %>
 <div>
-<p>Description:
-<%= @product.description %></p>
+<p>Description:</p>
+<%= @product.description %>
 
+<p>Review:</p>
 <ul>
-    Review:
     <% @product.reviews.each do |review| %>
         <li>
             <h6>Rating: <%= review.rating %></h6><br>
