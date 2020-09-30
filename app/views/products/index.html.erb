@@ -7,34 +7,32 @@
 <% end %>
 
 <main>
-    <div class="product page">
-        <h2>All Products</h2>
-        <ul>
-            <% @products.each do |product| %>
-                <div class="card">
-                    <div class="card__body">
-                        <div class="half">
-                            <div class="text">
-                                <h1><%= product.name %></h1>
-                                
-                                <% product.product_categories.each do |product_category| %>
-                                    <p class="name"><%= link_to product_category.category.name, category_path(product_category.category) %></p>
-                                <% end %>
-                                <p class="price">$<%= product.price %></p>
-                                
-                            </div>
+    <h2>All Products</h2>
+    <ul>
+        <% @products.each do |product| %>
+            <div class="card">
+                <div class="card__body">
+                    <div class="half">
+                        <div class="text">
+                            <h1><%= product.name %></h1>
+                            
+                            <% product.product_categories.each do |product_category| %>
+                                <p class="name"><%= link_to product_category.category.name, category_path(product_category.category) %></p>
+                            <% end %>
+                            <p class="price">$<%= product.price %></p>
+                            
                         </div>
-                        <div class="half">
-                            <div class="description">
-                                <p><%= product.description %></p>
-                            </div>
-                            <div class="view__button">
-                                <button><%= link_to "Full Page", product_path(product) %></button>
-                            </div>
+                    </div>
+                    <div class="half">
+                        <div class="description">
+                            <p><%= product.description %></p>
+                        </div>
+                        <div class="view__button">
+                            <button><%= link_to "Full Page", product_path(product) %></button>
                         </div>
                     </div>
                 </div>
-            <% end %>
-        </ul>
-    </div>
+            </div>
+        <% end %>
+    </ul>
 </main>
