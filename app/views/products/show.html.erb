@@ -1,22 +1,27 @@
 <h3>Product Name:</h3>
-<%= @product.name %>
+<%= @product.name %><br>
 
 <h3>Product Owner:</h3>
-<%= @product.owner.name %>
+<%= link_to @product.owner.name, user_path(@product.owner) %><br>
 
 <h6>Price:</h6>
 <%= @product.price %>
 
 <h6>Category:</h6>
+<%# how to link the category selected in the new page to product_categories? %>
 <% @product.product_categories.each do |pc| %>
     <%= pc.category.name %>
 <% end %>
-
+<div>
 <p>Description:
 <%= @product.description %></p>
 
-<p>Review:
-<% @product.reviews.each do |review| %>
-    <%= review.content %>
-    <%= review.rating %>
-<% end %>
+<ul>
+    Review:
+    <% @product.reviews.each do |review| %>
+        <li>
+            <h6>Rating: <%= review.rating %></h6><br>
+            <p><%= review.content %></p><br>
+        </li>
+    <% end %>
+</ul>

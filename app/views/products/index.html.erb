@@ -1,12 +1,15 @@
 <h1>Products</h1>
 
-<% @products.each do |product| %>
-    <div>
-        <%= product.name %>
-        <%= product.price %>
-        <%= product.description %>
-        <% product.product_categories.each do |product_category| %>
-            <%= product_category.category.name %>
-        <% end %>
-    </div>
-<% end %>
+<ul>
+    <% @products.each do |product| %>
+            <li>
+                Name: <%= link_to product.name, product_path(product) %><br>
+                Price: $<%= product.price %><br>
+                Category: <% product.product_categories.each do |product_category| %>
+                    # worry about this later
+                    <%= link_to product_category.category.name, category_path(product_category.category) %><br>
+                <% end %>
+            </li>
+
+    <% end %>
+</ul>

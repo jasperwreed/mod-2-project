@@ -32,3 +32,9 @@ pc2 = ProductCategory.create(category_id: Category.second.id, product_id: Produc
 pc3 = ProductCategory.create(category_id: Category.third.id, product_id: Product.fourth.id)
 pc4 = ProductCategory.create(category_id: Category.fourth.id, product_id: Product.second.id)
 
+review1 = Review.create(rating: 4.0, content: "Oh my gawd I love this", product_id: Product.first.id, user_id: User.first.id)
+review2 = Review.create(rating: 3.6, content: "Love the design but not so much about the functionality", product_id: Product.first.id, user_id: User.second.id)
+review3 = Review.create(rating: 5.0, content: "AHMAZING", product_id: Product.second.id, user_id: User.first.id)
+review4 = Review.create(rating: 2.0, content: "Meh", product_id: Product.third.id, user_id: User.first.id)
+review5 = Review.create(rating: 3.1, content: "It's alright", product_id: Product.fourth.id, user_id: User.third.id)
+

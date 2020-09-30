@@ -3,3 +3,15 @@
 
 <h3>Description</h3>
 <%= @user.bio %>
+
+<h3>Review</h3>
+<% @user.reviews.each do |review| %>
+    <div>
+        Name: 
+        <%= review.product.name%><br>
+        Rating: 
+        <%= review.rating %><br>
+        Content: 
+        <%= review.content %><br>
+    </div><br>
+<% end %>
