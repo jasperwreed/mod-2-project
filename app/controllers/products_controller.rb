@@ -1,10 +1,12 @@
 class ProductsController < ApplicationController
     before_action :set_product, only: [:show, :edit, :update, :destroy]
+    before_action :current_user, only: [:index]
     # before_action :require_logged_in
     # skip_before_action :, only: [:index]
 
     def index
         @products = Product.all
+        @category = Category.all
     end
     
     def show

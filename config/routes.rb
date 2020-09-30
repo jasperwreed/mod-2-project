@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
 
   get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
+  post '/login' => 'products#index'
   delete "logout", to: "sessions#destroy", as: "log_out"
 
   # root 'welcome#home'

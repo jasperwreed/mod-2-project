@@ -15,13 +15,13 @@ class SessionsController < ApplicationController
             # return redirect_to(controller: 'sessions', action: 'new') unless user
         else
             # redirect_to controller: 'product', action: 'home'
-            redirect_to new_user_path
+            redirect_to new_login_path
         end
     end
 
     def destroy
-        session.delete :user_id
-        redirect_to '/login'
+        log_out_user!
+        redirect_to new_login_path
     end
 
 end

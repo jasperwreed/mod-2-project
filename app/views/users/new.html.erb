@@ -1,15 +1,22 @@
 
 
-<%= form_for @user do |f| %>
-    <ul>
-        <li>
-            <%= f.label :username %>
-            <%= f.text_field :username %>
-        </li>
-        <li>
-            <%= f.label :password %>
-            <%= f.password_field :password %>
-        </li>
-  </ul>
-  <%= f.submit %>
-<% end %>
+<main>
+    <div class="card">
+        <h1>New User</h1>
+        <div class="card__body">
+            <%= form_for @user do |f| %>
+                <ul>
+                    <li>
+                        <%= f.label :username %>
+                        <%= f.text_field :username %>
+                    </li>
+                    <li>
+                        <%= f.label :password %>
+                        <%= f.password_field :password %>
+                    </li>
+                </ul>
+                <%= f.submit %>
+            <% end %>
+        </div>
+    </div>
+</main>

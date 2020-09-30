@@ -1,59 +1,96 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
 main{
-    max-width: 720px;
-    margin: 5% auto;
-  }
+  max-width: 720px;
+  margin: 5% auto;
+}
 
 .card{
-    box-shadow: 0 6px 6px rgba(#000, 0.3);
-    transition: 200ms;
-    background: #fff;
+  box-shadow: 0 6px 6px rgba(#000, 0.3);
+  transition: 200ms;
+  background: #fff;
+
+  h1 {
+    margin: 5px;
+    padding: 0;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    color: #3a3d41;
+  }
+  
+  .card__body{
+    padding: 20px 40px;
+    display: flex;
+    flex-flow: row no-wrap;
+    margin-bottom: 25px;
     
-    .card__body{
-      padding: 0 40px;
-      display: flex;
-      flex-flow: row no-wrap;
-      margin-bottom: 25px;
-      
-      > .half{
-        box-sizing: border-box;
-        padding: 0 15px;
-        flex: 1 0 50%;
-      }
-      
-      .text{
-        p{
-          margin: 0;
-          padding: 0;
-          
-          &.name{
-            font-size: 26px;
-            text-transform: uppercase;
-            color: #686e77;
-            font-weight: 300;
-            margin-bottom: 5px;
-          }
-          
-          &.price{
-            color: #252525;
-            font-size: 26px;
-          }
-        }
+    .half{
+      box-sizing: border-box;
+      padding: 0 15px;
+      flex: 1 0 50%;
+    }
+    
+    .text{
+      h1{
+        margin: 5px;
+        padding: 0;
+        font-weight: 800;
+        font-family: "Montserrat", sans-serif;
+        font-size: 50px;
+        line-height: 50px;
+        color: #181e28;
       }
 
-      .description{
-        margin-bottom: 25px;
+      p{
+        margin: 5px;
+        padding: 0;
         
-        p{
-          margin: 0;
-          font-family: "Open Sans", sans-serif;
+        &.name{
+          font-family: "Montserrat", sans-serif;
+          font-size: 15px;
+          text-transform: uppercase;
+          color: #3a3d41;
           font-weight: 300;
-          line-height: 27px;
-          font-size: 16px;
-          color: #555;
+          margin-bottom: 5px;
+        }
+        
+        &.price{
+          color: #252525;
+          font-size: 26px;
         }
       }
     }
+
+    .description{
+      margin-bottom: 25px;
+      
+      p{
+        margin: 0;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        line-height: 27px;
+        font-size: 16px;
+        color: #555;
+      }
+    }
+  }
 }
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+// <p class="name"><%= product.name %></p> 

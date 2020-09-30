@@ -1,28 +1,35 @@
-<h1>Hi there, <%=@user.username %>!</h1>
-<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'delete'}) do %>
     <input type=submit value='logout'>
 <% end %>
 
-<h2>Products</h2>
+<% @category.each do |category| %>
+    <%= category.name %>
+<% end %>
 
 <main>
     <div class="product page">
+        <h2>All Products</h2>
         <ul>
             <% @products.each do |product| %>
                 <div class="card">
                     <div class="card__body">
                         <div class="half">
                             <div class="text">
-                                <p class="name"><%= link_to product.name, product_path(product) %></p>
-                                <p class="price">$<%= product.price %></p>
-                                Category: <% product.product_categories.each do |product_category| %>
-                                    <%= link_to product_category.category.name, category_path(product_category.category) %><br>
+                                <h1><%= product.name %></h1>
+                                
+                                <% product.product_categories.each do |product_category| %>
+                                    <p class="name"><%= link_to product_category.category.name, category_path(product_category.category) %></p>
                                 <% end %>
+                                <p class="price">$<%= product.price %></p>
+                                
                             </div>
                         </div>
                         <div class="half">
                             <div class="description">
                                 <p><%= product.description %></p>
+                            </div>
+                            <div class="view__button">
+                                <button><%= link_to "Full Page", product_path(product) %></button>
                             </div>
                         </div>
                     </div>

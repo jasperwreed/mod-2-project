@@ -39,6 +39,15 @@
     color: black;
   }
 
+  .navbar p {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
   .product.page li {
       float: left;
       display: block;
@@ -50,16 +59,18 @@
   body {
     background-image: linear-gradient(
       to right bottom,
-      #4a4a4b,
-      #272727,
-      #222222,
-      #161616,
-      #0a0a0a
+      #dacd1e,
+      #e0ce2a,
+      #e5ad34,
+      #e8973b,
+      #eb3e12
     );
     height: 100%;
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
+
+
 
   
