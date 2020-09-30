@@ -1,6 +1,9 @@
-<h1>Hi there, <%= @user.username %>!</h1>
+<h1>Hi there, <%= @user.first_name %>!</h1>
 
-<h1>Name</h1>
+<h3>Full name</h1>
+<%= @user.full_name %>
+
+<h3>Username</h1>
 <%= @user.username %>
 
 <h3>Description</h3>

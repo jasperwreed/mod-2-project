@@ -11,9 +11,9 @@ Product.destroy_all
 User.destroy_all
 Category.destroy_all
 
-jack = User.create(username: "jack_ant", bio: "love insects", password: "oiwnlkno2i")
-jim = User.create(username: "jim_tuna", bio: "love tea, coffee, food", password: "iewokdn")
-liz = User.create(username: "liz_pie", bio: "love singing, hates insects", password: "i24ijlkxoi")
+jack = User.create(first_name: "Jack", last_name: "Jackson", username: "jack_ant", bio: "love insects", password: "oiwnlkno2i")
+jim = User.create(first_name: "Jim", last_name: "Parson", username: "jim_tuna", bio: "love tea, coffee, food", password: "iewokdn")
+liz = User.create(first_name: "Liz", last_name: "Zo",username: "liz_pie", bio: "love singing, hates insects", password: "i24ijlkxoi")
 # mary = User.create(name: "Mary", bio: "love church, pray")
 
 corgi_pillow = Product.create(name: "Mr.Corgi", price: 15.99, description: "Corgi Shaped Pillow", owner_id: User.first.id)
