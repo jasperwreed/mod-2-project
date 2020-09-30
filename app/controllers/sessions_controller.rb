@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     end
 
     def create
-        user = User.find_by(name: params[:user][:username])
+        user = User.find_by(name: params[:user][:name])
         user = user.try(:authenticate, params[:user][:password])
 
         return redirect_to(controller: 'sessions', action: 'new') unless user
@@ -12,13 +12,13 @@ class SessionsController < ApplicationController
 
         @user = user
 
-        redirect_to controller: 'product', action: 'home'
+        redirect_to controller: 'product', action: 'get'
     end
 
     def destroy
         session.delete :user_id
 
-        redirect_to '/'
+        redirect_to '/home'
     end
 
 end
