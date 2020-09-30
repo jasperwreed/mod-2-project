@@ -27,7 +27,7 @@
   
   .navbar a {
     float: left;
-    display: block;
+    display: box;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
@@ -49,12 +49,12 @@
   }
 
   .product.page li {
-      float: left;
-      display: block;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-  }
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
   body {
     background-image: linear-gradient(
@@ -69,6 +69,12 @@
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
+  }
+  
+  .footer {
+    background-color: #F1F1F1;
+    text-align: center;
+    padding: 20px;
   }
 
 

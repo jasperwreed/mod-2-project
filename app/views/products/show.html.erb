@@ -1,36 +1,30 @@
 
-<div class="row">
-    <div class="column"
-        <h3>Product Name:</h3>
-        <%= @product.name %><br>
+<div class="product page">
+    <h3>Product Name:</h3>
+    <%= @product.name %><br>
 
-        <h3>Product Owner:</h3>
-        <%= link_to @product.owner.username, user_path(@product.owner) %><br>
+    <h3>Product Owner:</h3>
+    <%= link_to @product.owner.username, user_path(@product.owner) %><br>
 
-        <h6>Price:</h6>
-        <%= @product.price %>
-    </div>
+    <h6>Price:</h6>
+    <%= @product.price %>
 
-    <div class="column">
-        <h6>Category:</h6>
-        <%# how to link the category selected in the new page to product_categories? %>
-        <% @product.product_categories.each do |pc| %>
-            <%= pc.category.name %>
+    <h6>Category:</h6>
+    <%# how to link the category selected in the new page to product_categories? %>
+    <% @product.product_categories.each do |pc| %>
+        <%= pc.category.name %>
+    <% end %>
+    <div>
+    <p>Description:</p>
+    <%= @product.description %>
+
+    <p>Review:</p>
+    <ul>
+        <% @product.reviews.each do |review| %>
+            <li>
+                <h6>Rating: <%= review.rating %></h6><br>
+                <p><%= review.content %></p><br>
+            </li>
         <% end %>
-        <div>
-        <p>Description:</p>
-        <%= @product.description %>
-    </div>
-
-    <div class="column">
-        <p>Review:</p>
-        <ul>
-            <% @product.reviews.each do |review| %>
-                <li>
-                    <h6>Rating: <%= review.rating %></h6><br>
-                    <p><%= review.content %></p><br>
-                </li>
-            <% end %>
-        </ul>
-    </div>
+    </ul>
 </div>
