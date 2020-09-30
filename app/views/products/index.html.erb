@@ -5,16 +5,29 @@
 
 <h2>Products</h2>
 
-<ul>
-    <% @products.each do |product| %>
-            <li>
-                Name: <%= link_to product.name, product_path(product) %><br>
-                Price: $<%= product.price %><br>
-                Category: <% product.product_categories.each do |product_category| %>
-                    # worry about this later
-                    <%= link_to product_category.category.name, category_path(product_category.category) %><br>
-                <% end %>
-            </li>
-
-    <% end %>
-</ul>
+<main>
+    <div class="product page">
+        <ul>
+            <% @products.each do |product| %>
+                <div class="card">
+                    <div class="card__body">
+                        <div class="half">
+                            <div class="text">
+                                <p class="name"><%= link_to product.name, product_path(product) %></p>
+                                <p class="price">$<%= product.price %></p>
+                                Category: <% product.product_categories.each do |product_category| %>
+                                    <%= link_to product_category.category.name, category_path(product_category.category) %><br>
+                                <% end %>
+                            </div>
+                        </div>
+                        <div class="half">
+                            <div class="description">
+                                <p><%= product.description %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </ul>
+    </div>
+</main>
