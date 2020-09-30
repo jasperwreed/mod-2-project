@@ -6,12 +6,14 @@ class UsersController < ApplicationController
     end
 
     def new
-        @user = User.new
+        # @user = User.new
     end
 
     def create
         @user = User.create(user_params)
-        redirect_to @user
+        return redirect_to controller: 'users', action: 'new' unless @user.save
+        session[:user_id] = @user.id
+        redirect_to controller: 'product', action: 'index' # need to change to product home page? 
     end
 
     def edit
@@ -22,7 +24,7 @@ class UsersController < ApplicationController
         redirect_to @user
     end
 
-    def delete
+    def destroy
         @user.destroy
         redirect_to user_path # custom path, options to continue, go back etc.
     end
@@ -34,6 +36,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:username, :bio, :password, :password_confirmation)
+        params.require(:user).permit(:username, :bio, :password, :password_confirmation, :new_password)
     end
 end

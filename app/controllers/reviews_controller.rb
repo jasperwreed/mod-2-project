@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-    before_action :set_review, only: [:update, :delete]
+    before_action :set_review, only: [:update, :destroy]
     
     def new
         @review = Review.new
@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
         redirect_to product_path(@review.product)
     end
 
-    def delete
+    def destroy
         @review.destroy(review.params)
     end
 
