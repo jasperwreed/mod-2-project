@@ -15,5 +15,11 @@
     <%= f.label :category %><br>
     <%= f.collection_check_boxes :category_ids, @category, :id, :name %><br><br>
 
+    <%= f.fields_for :categories, product.categories.build do |categories_fields| %>
+        <%= categories_fields.text_field :name %>
+    <% end %>
+
+
+
     <%= f.submit %>
 <% end %>

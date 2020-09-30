@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
-    before_action :set_product, only: [:show, :edit, :update, :delete]
+    before_action :set_product, only: [:show, :edit, :update, :destroy]
+    before_action :require_logged_in
+    skip_before_action :require_logged_in, only: [:index]
 
     def index
         @products = Product.all
@@ -26,7 +28,7 @@ class ProductsController < ApplicationController
         redirect_to @product
     end
 
-    def delete
+    def destroy
         @product.destroy
         redirect_to product_path 
     end
@@ -38,6 +40,6 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-        params.require(:product).permit(:name, :price, :description, :owner_id, category_ids: [])
+        params.require(:product).permit(:name, :price, :description, :owner_id, category_ids: [], categories_attributes: [:name])
     end
 end
