@@ -7,6 +7,14 @@
             <%= form_for @user do |f| %>
                 <ul>
                     <li>
+                        <%= f.label :first_name %>
+                        <%= f.text_field :first_name %>
+                    </li>
+                    <li>
+                        <%= f.label :last_name %>
+                        <%= f.text_field :last_name %>
+                    </li>
+                    <li>
                         <%= f.label :username %>
                         <%= f.text_field :username %>
                     </li>
@@ -16,6 +24,12 @@
                     </li>
                 </ul>
                 <%= f.submit %>
+            <% end %>
+            
+            <% if flash[:errors] %>
+                <% flash[:errors].each do |error| %>
+                    <p style="color:red"><%= error %></p>
+                <% end %>
             <% end %>
         </div>
     </div>
