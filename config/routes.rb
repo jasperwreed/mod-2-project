@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :products, only: [:new, :show, :create, :edit, :update, :destroy]
   resources :users, only: [:show, :new, :create, :edit, :update, :destroy]
 
-  root 'products', to: 'products#index', as: 'home'
+  get 'products', to: 'products#index', as: 'home'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
