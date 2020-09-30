@@ -1,15 +1,15 @@
-<%= form_for @user, controller: 'users', action: 'create' do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %><br>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %><br>
 
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %><br>
-
-    <%= f.label :bio %>
-    <%= f.text_area :bio %><br>
-
-    <%= f.submit %>
+<%= form_for @user do |f| %>
+    <ul>
+        <li>
+            <%= f.label :username %>
+            <%= f.text_field :username %>
+        </li>
+        <li>
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+        </li>
+  </ul>
+  <%= f.submit %>
 <% end %>

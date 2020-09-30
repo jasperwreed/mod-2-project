@@ -1,19 +1,23 @@
 class UsersController < ApplicationController
 
+    skip_before_action :fetch_user, only: [:new, :create]
     before_action :set_user, only: [:show, :edit, :update, :delete]
 
     def show
     end
 
     def new
-        # @user = User.new
+        @user = User.new
     end
 
     def create
         @user = User.create(user_params)
-        return redirect_to controller: 'users', action: 'new' unless @user.save
-        session[:user_id] = @user.id
-        redirect_to controller: 'product', action: 'index' # need to change to product home page? 
+        if @user.valid?
+            session[:user_id] = @user.id
+            redirect_to products_path
+        else
+            redirect_to new_user_path
+        end 
     end
 
     def edit
@@ -26,7 +30,7 @@ class UsersController < ApplicationController
 
     def destroy
         @user.destroy
-        redirect_to user_path # custom path, options to continue, go back etc.
+        redirect_to user_path
     end
 
     private
@@ -36,6 +40,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:username, :bio, :password, :password_confirmation, :new_password)
+        params.require(:user).permit(:username, :password, :bio)
     end
 end

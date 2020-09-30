@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
     before_action :set_product, only: [:show, :edit, :update, :destroy]
-    before_action :require_logged_in
-    skip_before_action :require_logged_in, only: [:index]
+    # before_action :require_logged_in
+    # skip_before_action :, only: [:index]
 
     def index
         @products = Product.all

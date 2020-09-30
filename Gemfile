@@ -55,4 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'awesome_print'
 
-gem 'bcrypt'
+gem 'bcrypt', '~> 3.1', '>= 3.1.12'
