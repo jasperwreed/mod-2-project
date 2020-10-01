@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
     skip_before_action :fetch_user, only: [:new, :create]
-    before_action :set_user, only: [:show, :edit, :update, :delete]
+    before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     def show
     end
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
     def destroy
         @user.destroy
-        redirect_to user_path
+        redirect_to new_user_path, :notice => "Your account has been deleted"
     end
 
     private
