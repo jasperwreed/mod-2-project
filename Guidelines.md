@@ -59,3 +59,15 @@ Cart
 Delete
     - functionality
     - routes
+
+Helper Methods:
+- product.rb
+    - total_category
+    - avg_rating
+    - most reviewed item(s)
+  
+
+- category.rb
+    - most popular item
+    - least popular item
+   

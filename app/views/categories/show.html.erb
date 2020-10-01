@@ -1,6 +1,7 @@
 
 <main>
     <h2>All <%= @category.name.capitalize %> Products</h2>
+
     <ul>
         <% @category.products.each do |product| %>
             <div class="card">

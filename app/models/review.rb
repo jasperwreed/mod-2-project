@@ -8,4 +8,6 @@ class Review < ApplicationRecord
   validates :user_id, presence: true
   # highest rating 
   # lowest rating
+
+  def highest rating 
 end

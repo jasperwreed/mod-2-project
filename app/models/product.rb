@@ -17,8 +17,25 @@ class Product < ApplicationRecord
         end
     end
 
+    # Total Categories of a single product
+    def total_category
+        self.categories.count
+    end
+
     # average rating
-    # most popular item(s)
-    # total item(s) overall, and maybe each category?
+    def avg_rating
+        average = 0
+        total = 0
+        self.reviews.each do |review|
+            total += review.rating
+        end
+        average = total / self.reviews.count
+    end
+
+    # most reviewed items
+    def most_reviewed_items
+        self.reviews.max
+    end
+    
 end
 
