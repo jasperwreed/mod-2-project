@@ -48,7 +48,7 @@
     text-decoration: none;
   }
 
-  .product.page li {
+  .product__page {
     float: left;
     display: block;
     text-align: center;
@@ -72,6 +72,10 @@
   }
   
   .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     background-color: #F1F1F1;
     text-align: center;
     padding: 20px;

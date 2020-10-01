@@ -1,5 +1,5 @@
 
-<div class="product page">
+<div class="product__page">
     <h3>Product Name:</h3>
     <%= @product.name %><br>
 
@@ -13,7 +13,7 @@
     <% @product.product_categories.each do |pc| %>
         <%= link_to pc.category.name, category_path(pc.category) %>
     <% end %>
-    <div>
+
     <p>Description:</p>
     <%= @product.description %>
 
@@ -22,8 +22,8 @@
         <% @product.reviews.each do |review| %>
             <li>
                 <%= link_to review.user.full_name, user_path(review.user) %>
-                <h6>Rating: <%= review.rating %></h6><br>
-                <p><%= review.content %></p><br>
+                <h6>Rating: <%= review.rating %></h6>
+                <p><%= review.content %></p>
             </li>
         <% end %>
     </ul>
