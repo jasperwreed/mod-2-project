@@ -9,11 +9,16 @@
 <h3>Description</h3>
 <%= @user.bio %>
 
+<h3>Owned Products</h3>
+<% @user.owned_products.each do |owned_product| %>
+    <%= link_to owned_product.name, product_path(owned_product) %>
+<% end %>
+
 <h3>Review</h3>
 <% @user.reviews.each do |review| %>
     <div>
         Name: 
-        <%= review.product.name%><br>
+        <%= link_to review.product.name, product_path(review.product) %><br>
         Rating: 
         <%= review.rating %><br>
         Content: 

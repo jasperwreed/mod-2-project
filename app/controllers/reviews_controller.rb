@@ -7,7 +7,12 @@ class ReviewsController < ApplicationController
 
     def create
         @review = Review.create(review_params)
-        redirect_to product_path(@review.product)
+        if @review.valid?
+            redirect_to product_path(@review.product)
+        else
+            flash[:errors] = @review.errors.full_messages
+            redirect_to new_review_path
+        end
     end
 
     def update

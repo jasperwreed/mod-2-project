@@ -20,7 +20,12 @@ class ProductsController < ApplicationController
 
     def create
         @product = Product.create(product_params)
-        redirect_to @product
+        if @product.valid?
+            redirect_to @product
+        else
+            flash[:errors] = @review.errors.full_messages
+            redirect_to new_product_path
+        end
     end
 
     def edit
@@ -28,7 +33,12 @@ class ProductsController < ApplicationController
     
     def update
         @product.update(product_params)
-        redirect_to @product
+        if @product.valid?
+            redirect_to @product
+        else
+            flash[:errors] = @product.errors.full_messages
+            redirect_to edit_product_path
+        end
     end
 
     def destroy
