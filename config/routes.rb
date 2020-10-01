@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :show, :create, :edit, :update, :destroy]
   resources :users, only: [:show, :new, :create, :edit, :update, :destroy]
 
-
+  get '/products/add', to: 'products#add'
 
   get '/login' => 'sessions#new'
   post '/login' => 'products#index'

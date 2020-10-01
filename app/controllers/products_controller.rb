@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
     def index
         @products = Product.all
         @category = Category.all
+        @cart = cart
     end
     
     def show
@@ -33,6 +34,11 @@ class ProductsController < ApplicationController
     def destroy
         @product.destroy
         redirect_to product_path 
+    end
+
+    def add
+        cart << product_params
+        redirect_to products_path
     end
 
     private

@@ -12,7 +12,7 @@
     <h6>Category:</h6>
     <%# how to link the category selected in the new page to product_categories? %>
     <% @product.product_categories.each do |pc| %>
-        <%= pc.category.name %>
+        <%= link_to pc.category.name, category_path(pc.category) %>
     <% end %>
     <div>
     <p>Description:</p>
