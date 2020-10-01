@@ -11,13 +11,26 @@ class User < ApplicationRecord
     validates :last_name, presence: true
     
     def full_name
-        self.first_name + self.last_name
+        self.first_name + " " + self.last_name
     end
 
     # deactivate account
+
     # how many products they have
-    # number of users
+    def number_of_products_owned
+        self.owned_products.count
+    end
+
     # total revenues 
-    # lowest cost
+
     # highest cost
+    def highest_cost
+        self.owned_products.price.max
+    end
+
+    # lowest cost
+    def lowest_cost
+        self.owned_products.price.min
+    end
+    
 end

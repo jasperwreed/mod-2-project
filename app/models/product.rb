@@ -36,6 +36,24 @@ class Product < ApplicationRecord
     def most_reviewed_items
         self.reviews.max
     end
+
+    def highest_rating
+        highest_rating = 0
+        self.reviews.each do |review|
+            if review.rating >= higest_rating && !higest_rating == nil
+                higest_rating = review.rating
+            end
+        end
+    end
+
+    def lowest_rating
+        highest_rating = 5.0
+        self.reviews.each do |review|
+            if review.rating >= lowest_rating && !lowest_rating == nil
+                lowest_rating = review.rating
+            end
+        end
+    end
     
 end
 

@@ -9,5 +9,4 @@ class Review < ApplicationRecord
   # highest rating 
   # lowest rating
 
-  def highest rating 
-end
+  

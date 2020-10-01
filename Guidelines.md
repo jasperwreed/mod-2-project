@@ -65,9 +65,14 @@ Helper Methods:
     - total_category
     - avg_rating
     - most reviewed item(s)
+    - highest rating
+    - lowest rating
   
-
 - category.rb
     - most popular item
     - least popular item
+
+- User.rb
+    - number of products
+    - lowest cost item
    
