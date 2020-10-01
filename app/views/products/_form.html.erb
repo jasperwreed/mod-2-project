@@ -19,8 +19,6 @@
                 <%= f.label :category %><br>
                 <%= f.collection_check_boxes :category_ids, @category, :id, :name %><br><br>
 
-                
-
                 <%= f.submit %>
             <% end %>
             <% if flash[:errors] %>

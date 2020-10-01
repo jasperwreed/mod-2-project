@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
     def destroy
         @user.destroy
-        redirect_to new_user_path, :notice => "Your account has been deleted"
+        redirect_to new_user_path
     end
 
     private

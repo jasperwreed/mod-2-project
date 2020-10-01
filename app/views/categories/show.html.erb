@@ -1,4 +1,30 @@
-<%= @category.name %>
-<% @category.products.each do |product| %>
-    <%= product.name %>
-<% end %>
+
+<main>
+    <h2>All <%= @category.name.capitalize %> Products</h2>
+    <ul>
+        <% @category.products.each do |product| %>
+            <div class="card">
+                <div class="card__body">
+                    <div class="half">
+                        <div class="text">
+                           <h1><%= product.name %></h1>
+                           <p class="price">$<%= product.price %></p>
+                            
+                        </div>
+                    </div>
+                    <div class="half">
+                        <div class="description">
+                            <p><%= product.description %></p>
+                        </div>
+                        <div class="view__button">
+                            <button><%= link_to "Full Page", product_path(product) %></button>
+                        </div>
+                        <div class="view_button">
+                            <button>Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </ul>
+<main>
