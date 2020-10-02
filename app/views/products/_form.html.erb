@@ -16,8 +16,9 @@
                 <%= f.label :owner %><br>
                 <%= f.collection_select :owner_id, User.all, :id, :username %><br><br>
 
+                
                 <%= f.label :category %><br>
-                <%= f.collection_check_boxes :category_ids, @category, :id, :name %><br><br>
+                <%= f.collection_check_boxes :category_ids, @category, :id, :name %>
 
                 <%= f.submit %>
             <% end %>
