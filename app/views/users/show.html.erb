@@ -16,6 +16,7 @@
             <%= @user.username %>
         </div>
         <%= link_to "Edit User", edit_user_path(@user) %>
+        <%= link_to "New Product", new_product_path %>
     </div>
 
     <div class="column">
@@ -41,6 +42,7 @@
                             <div class="view__button">
                                 <%= link_to "View Full Page", product_path(owned_product) %>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
