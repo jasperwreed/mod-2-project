@@ -14,11 +14,12 @@ main{
 
   h1 {
     margin: 5px;
-    padding: 0;
-    font-weight: 400;
+    font-weight: 800;
+    font-size: 32px;
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     color: #3a3d41;
+    line-height: 50px;
   }
   
   .card__body{
@@ -31,7 +32,19 @@ main{
       box-sizing: border-box;
       padding: 0 15px;
       flex: 1 0 50%;
+
+      .view__button {
+        a {
+          display: box;
+          color: #f2f2f2;
+          background-color: #333;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+      }
     }
+
     
     .text{
       h1{
@@ -78,19 +91,4 @@ main{
     }
   }
 }
-
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 10px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-// <p class="name"><%= product.name %></p> 
+ 

@@ -11,50 +11,53 @@ class User < ApplicationRecord
     validates :last_name, presence: true
     
     def full_name
-        self.first_name + " " + self.last_name
+        if !self.first_name == nil && !self.last_name == nil
+            self.first_name + " " + self.last_name
+        end
     end
 
     # deactivate account
 
     # how many products they have
     def number_of_products_owned
-        self.owned_products.count
+        if !self.owned_products.nil?
+            self.owned_products.count
+        end
     end
 
-    # total revenues 
-
-    # highest cost
-    def highest_cost
-        highest_cost_item = nil
-        self.owned_products.each do |owned_product|
-            if owned_product.price == owned_product.price.max
-                highest_cost_item = owned_product
+    # total cost
+    def total_cost
+        if !self.owned_products.nil?
+            total_cost = 0
+            self.owned_products.each do |owned_product|
+                total_cost += owned_product.price
             end
+            total_cost
         end
-        highest_cost_item
     end
 
     # lowest cost
     def lowest_cost
-        lowest_cost_item = nil
-        self.owned_products.each do |owned_product|
-            if owned_product.price == owned_product.price.min
-                lowest_cost_item = owned_product
-            end
+        if !self.owned_products.nil?
+            lowest_cost_item = self.owned_products.min_by { |owned_product| owned_product.price }
         end
-        lowest_cost_item
     end
 
-    def highest_rated_item
-        highest_rating = 0
-        self.owned_product.each do |owned_product|
-            owned_product.each do |product|
-                product.reviews.each do |review|
-                    if review.rating >= higest_rating && !higest_rating == nil
-                        higest_rating = review.rating
-                    end
-                end
+    # highest cost
+    def highest_cost
+        if !self.owned_products.nil?
+            highest_cost_item = self.owned_products.max_by { |owned_product| owned_product.price }
+        end
+    end
+
+    def avg_cost
+        if !self.owned_products.nil?
+            average = 0
+            total = 0
+            self.owned_products.each do |owned_product|
+                total += owned_product.price
             end
+            average = total / self.owned_products.count if self.owned_products.count > 0
         end
     end
     

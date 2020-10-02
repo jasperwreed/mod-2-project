@@ -1,11 +1,17 @@
-<%= form_for @user, url: login_path, method: :post do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+<main>
+    <div class="card">
+        <div class="card__body">
+            <%= form_for @user, url: login_path, method: :post do |f| %>
+                <%= f.label :username %>
+                <%= f.text_field :username %>
 
-    <%= f.submit "Log In" %>
-   
-<% end %>
-<button><%= link_to "New User", new_user_path %></button>
+                <%= f.label :password %>
+                <%= f.password_field :password %>
+
+                <%= f.submit "Log In" %>
+            
+            <% end %>
+        </div>
+    </div>
+</main>

@@ -16,14 +16,18 @@
     </div>
 
     <div class="navbar">
-      <a><%= link_to "Home", products_path %></a>
-      <p class="user">Hi there, <%= @user.first_name %>!</p>
+      
+      <% if @logged_in %>
+        <%= link_to "Home", products_path %>
+        <%= link_to "Hello" + " " + @user.first_name, user_path(@user) %>
+        <%= link_to "Log Out", logout_path %>
+      <% else %>
+        <%= link_to "Sign In", login_path %>
+        <%= link_to "Sign Up", new_user_path %>
+      <% end %>
+
     </div>
 
     <%= yield %>
-
-    <div class="footer">
-      <p>Footer</p>
-    </div>
   </body>
 </html>

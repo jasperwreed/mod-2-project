@@ -5,28 +5,22 @@
         <h1>New User</h1>
         <div class="card__body">
             <%= form_for @user do |f| %>
-                <ul>
-                    <li>
-                        <%= f.label :first_name %>
-                        <%= f.text_field :first_name %>
-                    </li>
-                    <li>
-                        <%= f.label :last_name %>
-                        <%= f.text_field :last_name %>
-                    </li>
-                    <li>
-                        <%= f.label :username %>
-                        <%= f.text_field :username %>
-                    </li>
-                    <li>
-                        <%= f.label :password %>
-                        <%= f.password_field :password %>
-                    </li>
-                    <li>
-                        <%= f.label :bio %>
-                        <%= f.text_area :bio %>
-                    </li>
-                </ul>
+                
+                <%= f.label :first_name %>
+                <%= f.text_field :first_name %>
+            
+                <%= f.label :last_name %>
+                <%= f.text_field :last_name %>
+            
+                <%= f.label :username %>
+                <%= f.text_field :username %>
+            
+                <%= f.label :password %>
+                <%= f.password_field :password %>
+            
+                <%= f.label :bio %>
+                <%= f.text_area :bio %>
+                    
                 <%= f.submit %>
             <% end %>
             

@@ -5,13 +5,11 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :show, :create, :edit, :update, :destroy]
   resources :users, only: [:show, :new, :create, :edit, :update, :destroy]
 
-  get '/products/add', to: 'products#add'
-
   get '/login' => 'sessions#new'
-  post '/login' => 'products#index'
-  delete "logout", to: "sessions#destroy", as: "log_out"
+  post '/login' => 'sessions#create'
 
-  # root 'welcome#home'
+  get '/logout' => 'sessions#destroy'
+  delete '/logout' => 'sessions#destroy'
 
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -1,7 +1,10 @@
 
 <main>
-    <h2>All <%= @category.name.capitalize %> Products</h2>
-
+    <h2>All <%= @category.name.capitalize %> Products: <%= @category.total_items %></h2>
+    <% if !@category.id == nil %>
+        <%= link_to "Highest Rated Product", product_path(@category.highest_category_item_rating) %>
+        <%= link_to "Lowest Rated Product", product_path(@category.lowest_category_item_rating) %>
+    <% end %>
     <ul>
         <% @category.products.each do |product| %>
             <div class="card">
@@ -18,10 +21,7 @@
                             <p><%= product.description %></p>
                         </div>
                         <div class="view__button">
-                            <button><%= link_to "Full Page", product_path(product) %></button>
-                        </div>
-                        <div class="view_button">
-                            <button>Add To Cart</button>
+                            <%= link_to "Full Page", product_path(product) %>
                         </div>
                     </div>
                 </div>

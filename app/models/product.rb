@@ -31,27 +31,17 @@ class Product < ApplicationRecord
         average = total / self.reviews.count
     end
 
-    # most reviewed items
-    def most_reviewed_items
-        self.reviews.max
+
+    def lowest_rating
+        lowest_rated_review = self.reviews.min_by { |reviews| reviews.rating }
     end
 
     def highest_rating
-        highest_rating = 0
-        self.reviews.each do |review|
-            if review.rating >= higest_rating && !review.rating == nil
-                higest_rating = review.rating
-            end
-        end
+        highest_rated_review = self.reviews.max_by { |reviews| reviews.rating }
     end
 
-    def lowest_rating
-        highest_rating = 5.0
-        self.reviews.each do |review|
-            if review.rating >= lowest_rating && !review.rating == nil
-                lowest_rating = review.rating
-            end
-        end
+    def backwards_sort
+       highest_rated_review = self.reviews.sort_by { |reviews| reviews.rating }
     end
     
 end

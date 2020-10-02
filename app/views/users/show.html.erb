@@ -1,27 +1,67 @@
-<h1>Hi there, <%= @user.first_name %>!</h1>
+<div class="row">
+    <div class="column">
+        <h1>Hi there, <%= @user.first_name.capitalize %></h1>
 
-<h3>Full name</h1>
-<%= @user.full_name %>
+        <div class="user_card">
+            <img src="https://www.w3schools.com/w3images/avatar6.png" alt="Avatar" style="width:100%">
+            <div class="container">
+                <%= @user.full_name %>
+                <div class="text">
+                    <%= @user.bio %>
+                </div> 
+            </div>
+        </div>
+        <div class="text">
+            <h3>Username</h1>
+            <%= @user.username %>
+        </div>
+        <%= link_to "Edit User", edit_user_path(@user) %>
+    </div>
 
-<h3>Username</h1>
-<%= @user.username %>
-
-<h3>Description</h3>
-<%= @user.bio %>
-
-<h3>Owned Products</h3>
-<% @user.owned_products.each do |owned_product| %>
-    <%= link_to owned_product.name, product_path(owned_product) %>
-<% end %>
-
-<h3>Review</h3>
-<% @user.reviews.each do |review| %>
-    <div>
-        Name: 
-        <%= link_to review.product.name, product_path(review.product) %><br>
-        Rating: 
-        <%= review.rating %><br>
-        Content: 
-        <%= review.content %><br>
-    </div><br>
-<% end %>
+    <div class="column">
+        <main>
+            <h3>Owned Products: <%= @user.number_of_products_owned %>, Total Cost: $<%= @user.total_cost %>, Average Cost: $<%= @user.avg_cost %></h3>
+            <% if !@user.id == nil %>
+                <%= link_to "Lowest Cost Product", product_path(@user.lowest_cost) %>
+                <%= link_to "Highest Cost Product", product_path(@user.highest_cost) %>
+            <% end %>
+            <% @user.owned_products.each do |owned_product| %>
+                <div class="card">
+                    <div class="card__body">
+                        <div class="half">
+                            <div class="text">
+                                <p class="name"><%= owned_product.name %></p>
+                                <p class="price"><%= owned_product.price %></p>
+                            </div>
+                        </div>
+                        <div class="half">
+                            <div class="description">
+                                <p><%= owned_product.description %></p>
+                            </div>
+                            <div class="view__button">
+                                <%= link_to "View Full Page", product_path(owned_product) %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </main>
+    </div>
+        
+    <div class="column">
+        <div class="text">
+            <h3>Reviews</h3>
+            <% @user.reviews.each do |review| %>
+                <div>
+                    Name: 
+                    <%= review.product.name %><br>
+                    Rating: 
+                    <%= review.rating %><br>
+                    Content: 
+                    <%= review.content %><br>
+                </div><br>
+            <% end %>
+            <%= link_to "Leave A Review", new_review_path %>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,4 @@
-<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'delete'}) do %>
-    <input type=submit value='logout'>
-<% end %>
+
 
 <main>
     <h2>All Products</h2>
@@ -24,10 +22,7 @@
                             <p><%= product.description %></p>
                         </div>
                         <div class="view__button">
-                            <button><%= link_to "Full Page", product_path(product) %></button>
-                        </div>
-                        <div class="view_button">
-                            <button>Add To Cart</button>
+                            <%= link_to "View Full Page", product_path(product) %>
                         </div>
                     </div>
                 </div>

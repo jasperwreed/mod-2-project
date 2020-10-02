@@ -7,7 +7,6 @@ class ProductsController < ApplicationController
     def index
         @products = Product.all
         @category = Category.all
-        @cart = cart
     end
     
     def show

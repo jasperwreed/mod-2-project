@@ -1,3 +1,43 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.user_card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 30%;
+    margin: 10px;
+  }
+  
+.user_card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+.text {
+    margin: 10px
+}
+
+.column {
+    float: left;
+    width: 30%;
+    padding: 15px;
+}
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column a {
+    display: box;
+    color: #f2f2f2;
+    background-color: #333;
+    text-align: center;
+    padding: 0 2px;
+    text-decoration: none;
+}

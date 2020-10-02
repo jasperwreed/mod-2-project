@@ -1,24 +1,30 @@
-<%= form_for @user, controller: 'users', action: 'update' do |f| %>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %><br>
+<main>
+    <div class="card">
+        <h1>Update User Account</h1>
+        <div class="card__body">
+            <%= form_for @user, controller: 'users', action: 'update' do |f| %>
+                <%= f.label :first_name %>
+                <%= f.text_field :first_name %><br>
 
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %><br>
+                <%= f.label :last_name %>
+                <%= f.text_field :last_name %><br>
 
-    <%= f.label :username %>
-    <%= f.text_field :username %><br>
+                <%= f.label :username %>
+                <%= f.text_field :username %><br>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %><br>
+                <%= f.label :password %>
+                <%= f.password_field :password %><br>
 
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %><br>
+                <%= f.label :password_confirmation %>
+                <%= f.password_field :password_confirmation %><br>
 
 
-    <%= f.label :bio %>
-    <%= f.text_area :bio %><br>
+                <%= f.label :bio %>
+                <%= f.text_area :bio %><br>
 
-    <%= f.submit %>
-<% end %>
-
-<%= button_to "Delete User", user_path, method: :delete %>
+                <%= f.submit %>
+                <%= button_to "Delete User", user_path, method: :delete %>
+            <% end %>
+        </div>
+    </div>
+</main>

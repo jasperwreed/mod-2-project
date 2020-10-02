@@ -1,22 +1,29 @@
-<%= form_for @review do |f| %>
-    <%= f.label :rating %>
-    <%= f.number_field :rating, step: 0.01 %>
+<main>
+    <div class="card">
+        <h1>New Review</h1>
+        <div class="card__body">
+            <%= form_for @review do |f| %>
+                <%= f.label :rating %>
+                <%= f.number_field :rating, step: 0.01 %>
 
-    <%= f.label :content %>
-    <%= f.text_area :content %>
+                <%= f.label :product %> 
+                <%= f.collection_select :product_id, Product.all, :id, :name %>
+                
+                <%= f.label :user %>
+                <%= f.collection_select :user_id, User.all, :id, :first_name %>
 
-    <%= f.label :product %> 
-    <%= f.collection_select :product_id, Product.all, :id, :name %>
-    
-    <%= f.label :user %>
-    <%= f.collection_select :user_id, User.all, :id, :first_name %>
+                <%= f.label :content %>
+                <%= f.text_area :content %>
 
-    <%= f.submit %>
-<% end %>
+                <%= f.submit %>
+            <% end %>
 
-<% if flash[:errors] %>
-    <% flash[:errors].each do |error| %>
-        <p style="color:red"><%= error %></p>
-    <% end %>
-<% end %>
+            <% if flash[:errors] %>
+                <% flash[:errors].each do |error| %>
+                    <p style="color:red"><%= error %></p>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</main>
 

@@ -1,27 +1,24 @@
 class SessionsController < ApplicationController
-
     skip_before_action :fetch_user, only: [:new, :create]
+    before_action :current_user, only: [:new, :create]
     
     def new
         @user = User.new
     end
 
     def create
-        @user = User.find_by(username: params[:user][:username])
-        # user = user.try(:authenticate, params[:user][:password])
+        @user = User.find_by(username: params[:username])
+
         if @user && @user.authenticate(params[:password])
-            session[:user_id] = user.id
-            redirect_to products_path
-            # return redirect_to(controller: 'sessions', action: 'new') unless user
+            session[:user_id] = @user.id
+            redirect_to user_path(@user) 
         else
-            # redirect_to controller: 'product', action: 'home'
-            redirect_to new_login_path
+            redirect_to login_path
         end
     end
 
     def destroy
         log_out_user!
-        redirect_to new_login_path
     end
 
 end

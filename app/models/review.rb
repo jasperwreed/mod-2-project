@@ -6,7 +6,5 @@ class Review < ApplicationRecord
   validates :content, presence: true, length: { minimum: 20 }
   validates :product_id, presence: true
   validates :user_id, presence: true
-  # highest rating 
-  # lowest rating
 
 end
