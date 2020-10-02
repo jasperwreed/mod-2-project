@@ -1,14 +1,12 @@
-
-
 <main>
-    <h2>All Products</h2>
+    <h1>All Products</h1>
     <ul>
         <% @products.each do |product| %>
             <div class="card">
                 <div class="card__body">
                     <div class="half">
                         <div class="text">
-                            <h1><%= product.name %></h1>
+                            <h2><%= product.name %></h3>
                             
                             <% product.product_categories.each do |product_category| %>
                                 <p class="name"><%= link_to product_category.category.name, category_path(product_category.category) %></p>

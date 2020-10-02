@@ -1,94 +1,139 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
-main{
-  max-width: 720px;
-  margin: 5% auto;
+main {
+    max-width: 720px;
+    margin: 5% auto;
 }
 
-.card{
-  box-shadow: 0 6px 6px rgba(#000, 0.3);
-  transition: 200ms;
-  background: #fff;
-
-  h1 {
-    margin: 5px;
+h1 {
+    text-align: center;
     font-weight: 800;
-    font-size: 32px;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
-    color: #3a3d41;
-    line-height: 50px;
-  }
-  
-  .card__body{
-    padding: 20px 40px;
-    display: flex;
-    flex-flow: row no-wrap;
-    margin-bottom: 25px;
-    
-    .half{
-      box-sizing: border-box;
-      padding: 0 15px;
-      flex: 1 0 50%;
-
-      .view__button {
-        a {
-          display: box;
-          color: #f2f2f2;
-          background-color: #333;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-        }
-      }
-    }
-
-    
-    .text{
-      h1{
-        margin: 5px;
-        padding: 0;
-        font-weight: 800;
-        font-family: "Montserrat", sans-serif;
-        font-size: 50px;
-        line-height: 50px;
-        color: #181e28;
-      }
-
-      p{
-        margin: 5px;
-        padding: 0;
-        
-        &.name{
-          font-family: "Montserrat", sans-serif;
-          font-size: 15px;
-          text-transform: uppercase;
-          color: #3a3d41;
-          font-weight: 300;
-          margin-bottom: 5px;
-        }
-        
-        &.price{
-          color: #252525;
-          font-size: 26px;
-        }
-      }
-    }
-
-    .description{
-      margin-bottom: 25px;
-      
-      p{
-        margin: 0;
-        font-family: "Open Sans", sans-serif;
-        font-weight: 300;
-        line-height: 27px;
-        font-size: 16px;
-        color: #555;
-      }
-    }
-  }
 }
- 
+
+.card {
+    box-shadow: 0 6px 6px rgba(#000, 0.3);
+    transition: 200ms;
+    background: #fff;
+    h1 {
+        margin: 5px;
+        font-weight: 800;
+        font-size: 32px;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        color: #3a3d41;
+        line-height: 50px;
+    }
+    .card__body {
+        padding: 20px 40px;
+        display: flex;
+        flex-flow: row no-wrap;
+        margin-bottom: 25px;
+        .half {
+            box-sizing: border-box;
+            padding: 0 15px;
+            flex: 1 0 50%;
+            .view__button {
+                a {
+                    display: box;
+                    color: #f2f2f2;
+                    background-color: #333;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                }
+            }
+        }
+        .text {
+            h2 {
+                margin: 5px;
+                padding: 0;
+                font-weight: 550;
+                font-family: "Montserrat", sans-serif;
+                font-size: px;
+                line-height: 50px;
+                color: #181e28;
+            }
+            p {
+                margin: 5px;
+                padding: 0;
+                &.name {
+                    font-family: "Montserrat", sans-serif;
+                    font-size: 15px;
+                    text-transform: uppercase;
+                    color: #3a3d41;
+                    font-weight: 300;
+                    margin-bottom: 5px;
+                }
+                &.price {
+                    color: #252525;
+                    font-size: 26px;
+                }
+            }
+        }
+        .description {
+            margin-bottom: 25px;
+            p {
+                margin: 0;
+                font-family: "Open Sans", sans-serif;
+                font-weight: 300;
+                line-height: 27px;
+                font-size: 16px;
+                color: #555;
+            }
+        }
+    }
+}
+
+.product-column {
+    font-family: "Montserrat", sans-serif;
+    text-align: left;
+    padding: 10px;
+    margin: 50px;
+    margin-right: 100px;
+    width: 30%;
+    padding: 15px;
+}
+
+.product-show {
+    h3 {
+        font-size: 30px;
+    }
+    h6 {
+        font-size: 25px;
+        #product-name {
+            font-size: 30px;
+            font-weight: 550;
+        }
+        #product-owner {
+            font-size: 25px;
+        }
+        #product-category {
+            font-size: 25px;
+            font-weight: 400;
+        }
+        #price {
+            text-align: center;
+        }
+    }
+    #description {
+        display: box;
+        font-size: 25px;
+        background-color: whitesmoke;
+    }
+}
+
+.review {
+    text-align: left;
+    margin: 30px;
+    padding: 20px 10px 30px 10px;
+    border: solid;
+    #rating {
+        margin-top: 10px;
+        font-size: 15px;
+    }
+    #content {
+        margin-bottom: 20px;
+        font-size: 15px;
+    }
+}

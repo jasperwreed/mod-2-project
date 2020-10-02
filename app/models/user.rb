@@ -11,9 +11,9 @@ class User < ApplicationRecord
     validates :last_name, presence: true
     
     def full_name
-        if !self.first_name == nil && !self.last_name == nil
+        # if !self.first_name == nil && !self.last_name == nil
             self.first_name + " " + self.last_name
-        end
+        # end
     end
 
     # deactivate account

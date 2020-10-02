@@ -19,7 +19,7 @@
       
       <% if @logged_in %>
         <%= link_to "Home", products_path %>
-        <%= link_to "Hello" + " " + @user.first_name, user_path(@user) %>
+        <%= link_to @user.first_name, user_path(@user) %>
         <%= link_to "Log Out", logout_path %>
       <% else %>
         <%= link_to "Sign In", login_path %>
