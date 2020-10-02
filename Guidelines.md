@@ -69,10 +69,15 @@ Helper Methods:
     - lowest rating
   
 - category.rb
+    - total_category
+    - total_items
     - most popular item
     - least popular item
 
 - User.rb
+    - full name
     - number of products
     - lowest cost item
+    - highest cost item
+
    

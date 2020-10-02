@@ -25,12 +25,37 @@ class User < ApplicationRecord
 
     # highest cost
     def highest_cost
-        self.owned_products.price.max
+        highest_cost_item = nil
+        self.owned_products.each do |owned_product|
+            if owned_product.price == owned_product.price.max
+                highest_cost_item = owned_product
+            end
+        end
+        highest_cost_item
     end
 
     # lowest cost
     def lowest_cost
-        self.owned_products.price.min
+        lowest_cost_item = nil
+        self.owned_products.each do |owned_product|
+            if owned_product.price == owned_product.price.min
+                lowest_cost_item = owned_product
+            end
+        end
+        lowest_cost_item
+    end
+
+    def highest_rated_item
+        highest_rating = 0
+        self.owned_product.each do |owned_product|
+            owned_product.each do |product|
+                product.reviews.each do |review|
+                    if review.rating >= higest_rating && !higest_rating == nil
+                        higest_rating = review.rating
+                    end
+                end
+            end
+        end
     end
     
 end

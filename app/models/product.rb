@@ -8,7 +8,6 @@ class Product < ApplicationRecord
     validates :price, presence: true, numericality: { greater_than_or_equal_to: 0}
     validates :description, presence: true, length: { minimum: 10}
     validates :owner_id, presence: true
-    validates :category_ids, presence: true
 
     def categories_attributes=(category_attributes)
         category_attributes.values.each do |category_attribute|
@@ -40,7 +39,7 @@ class Product < ApplicationRecord
     def highest_rating
         highest_rating = 0
         self.reviews.each do |review|
-            if review.rating >= higest_rating && !higest_rating == nil
+            if review.rating >= higest_rating && !review.rating == nil
                 higest_rating = review.rating
             end
         end
@@ -49,7 +48,7 @@ class Product < ApplicationRecord
     def lowest_rating
         highest_rating = 5.0
         self.reviews.each do |review|
-            if review.rating >= lowest_rating && !lowest_rating == nil
+            if review.rating >= lowest_rating && !review.rating == nil
                 lowest_rating = review.rating
             end
         end

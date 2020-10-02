@@ -9,4 +9,4 @@ class Review < ApplicationRecord
   # highest rating 
   # lowest rating
 
-  
+end
