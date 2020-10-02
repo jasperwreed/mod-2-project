@@ -1,35 +1,32 @@
 
-<%# <div class="product"> %>
-    <div class="product-column">
-        <div class="product-show">
-            <h3>Product Name:
-            <span id="product-name"><%= @product.name %></span></h3><br>
+<div class="product-column">
+    <div class="product-show">
+        <h3>Product Name:
+        <span id="product-name"><%= @product.name %></span></h3><br>
 
-            <h3>Product Owner:
-            <span id="product-owner"><%= link_to @product.owner.username, user_path(@product.owner) %><span></h3><br>
+        <h3>Product Owner:
+        <span id="product-owner"><%= link_to @product.owner.username, user_path(@product.owner) %><span></h3><br>
 
-            <h6>Price: <span id="price"><%= @product.price %></span></h6>
-            
+        <h6>Price: <span id="price"><%= @product.price %></span></h6>
+        
 
-            <h6>Category:
-            <% @product.product_categories.each do |pc| %>
-                <span id="product-category"><%= link_to pc.category.name, category_path(pc.category) %></span>
-            <% end %></h6>
+        <h6>Category:
+        <% @product.product_categories.each do |pc| %>
+            <span id="product-category"><%= link_to pc.category.name, category_path(pc.category) %></span>
+        <% end %></h6>
 
-            <h6>Description:</h6>
-            <span id="description"><%= @product.description %></span>
+        <h6>Description:</h6>
+        <span id="description"><%= @product.description %></span>
+    </div>
+</div>
+
+<div class="product-column">
+    <h4>Review:</h4>
+    <% @product.reviews.each do |review| %>
+        <div class="review">
+            <%= link_to review.user.full_name, user_path(review.user) %>
+            <h6 id="rating">Rating: <%= review.rating %></h6>
+            <span id="content"><%= review.content %></span>
         </div>
-    </div>
-
-    <div class="column">
-        <h4>Review:</h4>
-        <% @product.reviews.each do |review| %>
-            <div class="review">
-                <%= link_to review.user.full_name, user_path(review.user) %>
-                <h6 id="rating">Rating: <%= review.rating %></h6>
-                <span id="content"><%= review.content %></span>
-            </div>
-        <% end %>
-    </div>
-
-<%# </div> %>
+    <% end %>
+</div>
